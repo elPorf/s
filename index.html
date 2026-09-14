@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 | 3 Sce | EL Prof</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#080b12;--card:#111722;--card2:#0d121b;--text:#f5f7fb;--muted:#9ba7b8;--line:#263142;--accent:#65b7ff;--accent2:#9a7cff}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:radial-gradient(circle at top,#172238 0,#080b12 48%);color:var(--text);min-height:100vh}
+header{position:sticky;top:0;z-index:10;background:rgba(8,11,18,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-family:Georgia,serif;font-size:25px;font-weight:800;letter-spacing:.5px}
+.brand span{color:var(--accent)}
+.badge{font-size:12px;color:#cbd5e1;border:1px solid var(--line);padding:7px 10px;border-radius:999px}
+.hero{max-width:1200px;margin:0 auto;padding:42px 20px 25px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(32px,6vw,58px);margin:0 0 10px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:15px;line-height:1.8;max-width:750px}
+.controls{max-width:1200px;margin:auto;padding:10px 20px 25px;display:grid;grid-template-columns:1fr auto;gap:12px}
+.search,.select{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:14px;padding:14px 16px;font-size:15px;outline:none}
+.search:focus,.select:focus{border-color:var(--accent)}
+.stats{max-width:1200px;margin:auto;padding:0 20px 20px;display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:rgba(17,23,34,.8);border:1px solid var(--line);padding:10px 14px;border-radius:12px;color:#dbe6f5;font-size:13px}
+.grid{max-width:1200px;margin:auto;padding:0 20px 45px;display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.card{background:linear-gradient(145deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 14px 35px rgba(0,0,0,.18);transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#3b82c4}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.word{font-family:Georgia,serif;font-size:25px;font-weight:800;direction:ltr;text-align:left}
+.play{border:1px solid #38516b;background:#142334;color:#dcefff;border-radius:11px;width:42px;height:42px;cursor:pointer;font-size:18px}
+.play:hover{background:#1b344e}
+.ar{color:#c7d2e0;font-size:14px;margin-top:7px}
+.meaning{margin:14px 0;background:#0a1019;border:1px solid #202b3b;border-radius:13px;padding:12px}
+.label{font-size:11px;color:var(--accent);font-weight:700;margin-bottom:5px}
+.row{padding:10px 0;border-top:1px solid #202a38;line-height:1.6}
+.row:first-child{border-top:0}
+.en{direction:ltr;text-align:left;font-weight:700}
+.small{font-size:13px;color:#b7c1cf}
+.empty{text-align:center;color:var(--muted);grid-column:1/-1;padding:50px}
+footer{text-align:center;color:#718096;padding:0 20px 30px;font-size:12px}
+@media(max-width:650px){.controls{grid-template-columns:1fr}.hero{padding-top:30px}.nav{padding:13px 15px}.grid{padding-left:14px;padding-right:14px}.hero,.controls,.stats{padding-left:14px;padding-right:14px}}
+
+/* === EL PROF LUXURY THEME === */
+:root{
+ --bg:#050608; --panel:rgba(20,18,15,.78); --panel2:rgba(12,12,13,.9);
+ --gold:#d7b46a; --gold2:#f1d58b; --ink:#f7f1e5; --muted:#aaa39a;
+ --border:rgba(215,180,106,.24); --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+body{
+ background:
+ radial-gradient(circle at 15% 5%,rgba(215,180,106,.10),transparent 28%),
+ radial-gradient(circle at 90% 20%,rgba(117,90,43,.10),transparent 25%),
+ linear-gradient(135deg,#050608 0%,#12100c 45%,#070809 100%);
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+ background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+ background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent 85%);}
+header{background:rgba(5,6,8,.82);border-bottom:1px solid var(--border)}
+.brand{font-family:Georgia,"Times New Roman",serif;letter-spacing:1px}
+.brand span{color:var(--gold2)}
+.hero h1{font-family:Georgia,"Times New Roman",serif}
+.hero h1 span{color:var(--gold2)}
+.hero p{color:var(--muted)}
+.search,.select,.settings-panel{
+ background:linear-gradient(145deg,rgba(27,24,19,.92),rgba(10,11,12,.92));
+ border:1px solid var(--border);box-shadow:inset 0 1px rgba(255,255,255,.035)
+}
+.card{
+ background:linear-gradient(145deg,rgba(28,25,20,.92),rgba(10,11,13,.96));
+ border:1px solid var(--border);box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.card:before{content:"";position:absolute;top:0;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.65}
+.card:hover{transform:translateY(-5px);border-color:rgba(241,213,139,.55)}
+.word{font-family:Georgia,"Times New Roman",serif;color:#fff8e8}
+.ar{color:#c9bfae}
+.meaning{background:rgba(0,0,0,.22);border-color:rgba(215,180,106,.16)}
+.label{color:var(--gold2);letter-spacing:.7px}
+.play{border:1px solid rgba(215,180,106,.35);background:rgba(215,180,106,.08);color:var(--gold2)}
+.play:hover{background:rgba(215,180,106,.16)}
+.controls{grid-template-columns:minmax(0,1fr) auto auto}
+.settings-btn{border:1px solid var(--border);background:linear-gradient(145deg,#201b13,#0d0e10);color:var(--gold2);border-radius:14px;padding:0 17px;cursor:pointer;font-weight:700}
+.settings-panel{max-width:1200px;margin:0 auto 18px;padding:18px 20px;border-radius:18px;display:none}
+.settings-panel.open{display:block}
+.settings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.setting label{display:block;color:#cfc5b5;font-size:12px;margin-bottom:7px}
+.setting select,.setting input[type=range]{width:100%}
+.setting select{background:#0c0d10;color:#f4eee2;border:1px solid var(--border);border-radius:10px;padding:9px}
+.range-line{display:flex;align-items:center;gap:10px}
+.range-line span{min-width:38px;color:var(--gold2);font-size:12px}
+.voice-note{grid-column:1/-1;color:#8f897f;font-size:12px;line-height:1.7}
+@media(max-width:850px){.settings-grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.search{grid-column:1/-1}}
+@media(max-width:520px){.settings-grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.settings-btn{padding:13px}.hero{padding-top:30px}}
+
+
+/* LUMINOUS ROUND CARDS + EXAMS */
+#grid{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));align-items:center}.card{aspect-ratio:1/1;border-radius:50%;padding:27px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:radial-gradient(circle at 35% 28%,rgba(255,248,220,.16),rgba(28,25,20,.94) 42%,rgba(6,7,8,.98) 100%);border:1px solid rgba(241,213,139,.35);box-shadow:0 0 8px rgba(241,213,139,.08),0 0 28px rgba(215,180,106,.08),inset 0 0 28px rgba(241,213,139,.035);animation:luxGlow 3.8s ease-in-out infinite}.card:nth-child(3n){animation-delay:.8s}.card:nth-child(3n+1){animation-delay:1.6s}.card:after{content:"";position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(255,255,255,.045);pointer-events:none}.card:hover{transform:translateY(-6px) scale(1.025);border-color:rgba(255,235,170,.8);box-shadow:0 0 15px rgba(241,213,139,.24),0 0 55px rgba(215,180,106,.18),inset 0 0 35px rgba(241,213,139,.07)}.card .top{justify-content:center;position:relative;z-index:1}.card .word{font-size:24px;text-align:center;overflow-wrap:anywhere;text-shadow:0 0 10px rgba(241,213,139,.14)}.card .ar{text-align:center}.card .play{position:absolute;top:19px;right:19px;border-radius:50%;width:38px;height:38px;z-index:2}.card .meaning{background:rgba(0,0,0,.22);border-radius:15px;text-align:center;max-height:92px;overflow:auto}.card .row{text-align:center}.card .en{text-align:center}@keyframes luxGlow{0%,100%{filter:brightness(.94);box-shadow:0 0 8px rgba(241,213,139,.07),0 0 24px rgba(215,180,106,.06),inset 0 0 24px rgba(241,213,139,.03)}50%{filter:brightness(1.13);box-shadow:0 0 15px rgba(241,213,139,.22),0 0 48px rgba(215,180,106,.15),inset 0 0 34px rgba(241,213,139,.065)}}
+.vocab-section-title{max-width:1200px;margin:5px auto 18px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}.vocab-section-title h2{margin:0;font-family:Georgia,serif;color:var(--gold2)}.exam-btn{border:1px solid rgba(241,213,139,.45);background:rgba(215,180,106,.1);color:#fff8e8;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}.exam-wrap{max-width:1200px;margin:0 auto 30px;padding:0 20px}.exam-panel{background:linear-gradient(145deg,rgba(25,22,17,.96),rgba(7,8,10,.98));border:1px solid rgba(241,213,139,.32);border-radius:28px;padding:22px;box-shadow:0 20px 70px rgba(0,0,0,.45),0 0 35px rgba(215,180,106,.08)}.exam-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}.exam-head h2{margin:0;font-family:Georgia,serif;color:var(--gold2)}.exam-meta{color:#aaa39a;font-size:13px}.question{padding:17px;border:1px solid rgba(215,180,106,.15);border-radius:18px;background:rgba(0,0,0,.16);margin:12px 0}.qtext{font-size:18px;font-weight:800;line-height:1.7;margin-bottom:12px}.options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.option{border:1px solid rgba(215,180,106,.2);background:rgba(215,180,106,.055);color:#f7f1e5;border-radius:13px;padding:12px;cursor:pointer;text-align:right;transition:.2s;font-size:14px}.option:hover{background:rgba(215,180,106,.13);border-color:rgba(241,213,139,.55)}.option.selected{border-color:#f1d58b;background:rgba(241,213,139,.16)}.option.correct{border-color:#68e3a4;background:rgba(72,190,125,.13)}.option.wrong{border-color:#ff8b9e;background:rgba(255,90,120,.12)}.exam-submit{width:100%;margin-top:15px;border:0;border-radius:15px;padding:14px;background:linear-gradient(135deg,#d7b46a,#8e6a2e);color:#080808;font-weight:900;cursor:pointer}.exam-result{margin-top:15px;padding:17px;border-radius:17px;background:rgba(215,180,106,.08);text-align:center;font-size:18px;font-weight:800}.exam-result strong{font-size:30px;color:var(--gold2)}@media(max-width:650px){#grid{grid-template-columns:repeat(2,minmax(145px,1fr));gap:11px}.card{padding:18px}.card .word{font-size:18px}.card .meaning{font-size:12px;padding:8px}.card .play{top:11px;right:11px;width:32px;height:32px}.options{grid-template-columns:1fr}.exam-panel{padding:15px}.vocab-section-title,.exam-wrap{padding-left:14px;padding-right:14px}.vocab-section-title{align-items:flex-start;gap:10px;flex-direction:column}}
+
+/* === UNIT 2 CIRCULAR GLOW + EXAM FLOW === */
+.card{border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px;animation:luxGlow 3.8s ease-in-out infinite;transition:transform .35s ease,filter .35s ease,box-shadow .35s ease}
+.card:nth-child(3n){animation-delay:-1.2s}.card:nth-child(4n){animation-delay:-2.1s}.card:nth-child(5n){animation-delay:-.6s}
+.card:hover{transform:translateY(-8px) scale(1.035)}
+.card .top{width:100%;display:flex;justify-content:center;align-items:center}.card .word{font-size:25px}.card .meaning{width:100%;max-height:105px}
+.card .play{right:16px;top:16px}.grid{align-items:start}
+.syn-section{max-width:1200px;margin:55px auto 28px;padding:0 20px}.syn-title{margin-bottom:20px;text-align:center}.syn-title span{font-size:11px;letter-spacing:2px;color:var(--gold2)}.syn-title h2{margin:7px 0 5px;font-family:Georgia,"Times New Roman",serif;color:#fff8e8;font-size:28px}.syn-title p{margin:0;color:#aaa39a}
+.syn-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.syn-card{min-height:390px;border-radius:42px;padding:30px 24px;background:radial-gradient(circle at 50% 18%,rgba(241,213,139,.18),transparent 30%),linear-gradient(145deg,rgba(29,25,18,.98),rgba(7,8,10,.98));border:1px solid rgba(241,213,139,.38);box-shadow:0 0 18px rgba(241,213,139,.08),0 22px 60px rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;animation:luxGlow 4.6s ease-in-out infinite}.syn-card:nth-child(even){animation-delay:-2s}.syn-word{font-family:Georgia,"Times New Roman",serif;font-size:31px;font-weight:900;color:#fff8e8;text-shadow:0 0 18px rgba(241,213,139,.25);margin-bottom:12px}.syn-meaning{color:#d8cfbf;margin-bottom:18px}.pair{width:100%;padding:15px 12px;margin-top:10px;border-radius:24px;background:rgba(0,0,0,.25);border:1px solid rgba(215,180,106,.18)}.pair .label{margin-bottom:5px}.pair .en{font-size:18px;font-weight:900}.pair .small{margin-top:5px}
+.exam-launch{max-width:1200px;margin:35px auto 25px;padding:0 20px}.exam-launch-card{border:1px solid rgba(241,213,139,.34);border-radius:28px;padding:22px 26px;background:linear-gradient(145deg,rgba(25,22,17,.94),rgba(8,9,11,.98));display:flex;align-items:center;gap:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}.launch-icon{font-size:40px}.exam-launch-card h2{margin:0;color:var(--gold2);font-family:Georgia,"Times New Roman",serif}.exam-launch-card p{margin:5px 0 0;color:#aaa39a}.launch-btn{margin-right:auto;white-space:nowrap}
+.hidden-exam{display:none}.exam-confirm{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}.exam-confirm.show{display:flex}.confirm-card{width:min(470px,100%);border:1px solid rgba(241,213,139,.45);border-radius:30px;padding:35px 25px;text-align:center;background:linear-gradient(145deg,#211c14,#08090b);box-shadow:0 0 70px rgba(215,180,106,.16)}.confirm-icon{font-size:45px}.confirm-card h2{font-family:Georgia,"Times New Roman",serif;color:#fff8e8;font-size:29px;margin:12px 0}.confirm-card p{color:#aaa39a;line-height:1.8}.confirm-actions{display:flex;gap:12px;margin-top:22px}.confirm-actions button{flex:1;border-radius:15px;padding:13px;border:1px solid rgba(215,180,106,.3);font-weight:900;cursor:pointer}.confirm-yes{background:linear-gradient(135deg,#d7b46a,#8e6a2e);color:#080808}.confirm-no{background:rgba(255,255,255,.04);color:#f7f1e5}
+@media(max-width:850px){.syn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.syn-card{min-height:360px}.card{padding:22px}.card .word{font-size:21px}}
+@media(max-width:560px){.grid{grid-template-columns:repeat(2,minmax(130px,1fr))}.syn-grid{grid-template-columns:1fr}.syn-card{min-height:350px;border-radius:36px}.exam-launch-card{flex-wrap:wrap}.launch-btn{margin-right:0;width:100%}.confirm-actions{flex-direction:column}.card .meaning{font-size:11px}.card .word{font-size:17px}.card .ar{font-size:11px}}
+
+/* === CHANNEL PROMOTION — SUBTLE & VISIBLE === */
+.channel-promo{max-width:1200px;margin:18px auto;padding:0 20px}
+.channel-btn{position:relative;display:flex;align-items:center;justify-content:center;gap:12px;width:min(620px,100%);margin:auto;padding:12px 18px;border:1px solid rgba(241,213,139,.28);border-radius:18px;background:linear-gradient(145deg,rgba(215,180,106,.075),rgba(255,255,255,.025));color:#f7f1e5;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.22);transition:.25s;overflow:hidden}
+.channel-btn:hover{transform:translateY(-2px);border-color:rgba(241,213,139,.52);box-shadow:0 10px 34px rgba(215,180,106,.10)}
+.channel-icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f1d58b,#8e6a2e);color:#080808;font-size:17px;font-weight:900;animation:channelPulse 2.4s ease-in-out infinite;box-shadow:0 0 0 0 rgba(241,213,139,.28)}
+.channel-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1.2}.channel-text b{font-size:14px}.channel-text small{font-size:10px;color:#aaa39a;margin-top:4px}
+.channel-btn:after{content:"";position:absolute;inset:-40%;background:linear-gradient(110deg,transparent 42%,rgba(255,255,255,.12) 50%,transparent 58%);transform:translateX(-65%);animation:channelShine 4.5s linear infinite;pointer-events:none}
+@keyframes channelPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(241,213,139,.22)}50%{transform:scale(1.08);box-shadow:0 0 0 9px rgba(241,213,139,0)}}
+@keyframes channelShine{0%,70%{transform:translateX(-65%)}100%{transform:translateX(65%)}}
+@media(max-width:560px){.channel-promo{padding:0 14px}.channel-btn{padding:11px 13px}.channel-text b{font-size:13px}}
+
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand">EL <span>Prof</span></div><div class="badge">Unit 2 | 3 Sce</div></div></header>
+
+<section class="hero">
+<h1>Unit 2 | 3 Sce</h1>
+<p>ده موقع <strong>البروف</strong> عملوا فيه أهم الكلمات اللي بتتكرر في امتحانات الثانوية العامة على <strong>Unit 2 | 3 Sce</strong>.</p>
+</section>
+<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
+<div class="controls">
+<input id="search" class="search" placeholder="ابحث عن كلمة أو معناها بالعربي..." oninput="render()">
+<select id="section" class="select" onchange="render()">
+<option value="all">كل الكلمات</option>
+<option value="key">Key Vocabulary</option>
+<option value="reading">Reading & Listening</option>
+<option value="syn">Synonyms & Antonyms</option>
+</select>
+<button class="settings-btn" onclick="toggleSettings()">⚙ إعدادات الصوت</button>
+</div>
+<div id="settingsPanel" class="settings-panel">
+  <div class="settings-grid">
+    <div class="setting">
+      <label>القارئ / Voice</label>
+      <select id="voiceSelect"></select>
+    </div>
+    <div class="setting">
+      <label>سرعة النطق</label>
+      <div class="range-line"><input id="rate" type="range" min=".55" max="1.15" step=".05" value=".82"><span id="rateVal">0.82×</span></div>
+    </div>
+    <div class="setting">
+      <label>حدة الصوت</label>
+      <div class="range-line"><input id="pitch" type="range" min=".65" max="1.35" step=".05" value="1"><span id="pitchVal">1.00</span></div>
+    </div>
+    <div class="setting">
+      <label>مستوى الصوت</label>
+      <div class="range-line"><input id="volume" type="range" min=".2" max="1" step=".05" value="1"><span id="volumeVal">100%</span></div>
+    </div>
+    <div class="voice-note">
+      💡 اختر أي صوت إنجليزي متاح على جهازك. يوجد وضعان بطابع «متعلم مصري» يعتمدـان على سرعة أبطأ وحدّة قريبة من نطق المتعلم. توفر الأصوات نفسها يختلف حسب الجهاز والمتصفح، لذلك لا يتم ادعاء وجود صوت مصري حقيقي إذا لم يكن مثبتًا على جهازك.
+    </div>
+  </div>
+</div>
+<div class="stats"><div class="stat">📚 <b id="count">0</b> كلمة</div><div class="stat">🔊 نطق إنجليزي</div><div class="stat">🇪🇬 نطق عربي</div></div>
+<div class="vocab-section-title"><h2>📚 Unit 2 | 3 Sce</h2></div>
+<main id="grid" class="grid"></main>
+<section class="syn-section" id="synSection"><div class="syn-title"><div><span>✦ SYNONYMS & ANTONYMS</span><h2>المرادفات والمضادات</h2><p>الكلمات التي لها مرادف ومضاد — في قوالب كبيرة وواضحة للمراجعة.</p></div></div><div id="synGrid" class="syn-grid"></div></section>
+<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
+<section class="exam-launch"><div class="exam-launch-card"><div class="launch-icon">🎓</div><div><h2>جاهز للاختبار؟</h2><p>اختبر نفسك في 10 أسئلة اختيار من متعدد — الدرجة من 10.</p></div><button class="exam-btn launch-btn" onclick="askBeforeExam()">عايز أمتحن</button></div></section>
+<div class="exam-wrap hidden-exam" id="examWrap"><div class="exam-panel" id="examPanel"><div class="exam-head"><div><h2>🎓 الامتحان العشوائي</h2><div class="exam-meta" id="examMeta">10 أسئلة اختيار من متعدد • الدرجة من 10</div></div><button class="exam-btn" onclick="newRandomExam()">امتحان عشوائي جديد ↻</button></div><div id="examQuestions"></div><button class="exam-submit" id="examSubmit" onclick="submitExam()">تسليم الامتحان وحساب الدرجة / 10</button><div id="examResult"></div></div></div>
+<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
+<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
+<footer>يونت 2 ثانوية عامة — EL Prof</footer>
+<div class="exam-confirm" id="examConfirm"><div class="confirm-card"><div class="confirm-icon">📖</div><h2>هل ذاكرت الكلمات؟</h2><p>قبل ما تدخل الامتحان، اتأكد إنك ذاكرت الكلمات كويس.</p><div class="confirm-actions"><button class="confirm-yes" onclick="startExamAfterConfirm()">نعم، ذاكرت</button><button class="confirm-no" onclick="closeExamConfirm()">لسه بذاكر</button></div></div></div>
+
+<script>
+const words = [
+/* Key Vocabulary */
+["adopt","أَدوبت","يتبنّى / يعتمد","key","embrace / accept / take on","يتقبل / يتبنّى","reject / abandon / refuse","يرفض / يتخلى عن"],
+["gin","جِن","آلة حَلْج القطن","key","","","",""],
+["right-click","رايت كليك","ينقر بزر الفأرة الأيمن","key","","","",""],
+["artifact","آرتِفاكت","قطعة أثرية","key","","","",""],
+["infrastructure","إنفراستراكشر","بنية تحتية","key","","","",""],
+["sophisticated","سَفِستِكَيْتِد","متطور / معقد","key","refined / advanced / cultured","متطور / راقٍ / مثقف","simple / naive / unsophisticated","بسيط / ساذج / غير متطور"],
+["automation","أوتوميشن","تشغيل آلي","key","","","",""],
+["initiative","إِنِشِتِڤ","مبادرة","key","","","",""],
+["technician","تِكنِشَن","فني / شخص تقني","key","","","",""],
+["cable","كَيْبُل","سلك / كابل","key","","","",""],
+["offline","أوفلاين","غير متصل بالإنترنت","key","","","",""],
+["troubleshoot","تْرَبُل شوت","يكتشف الأخطاء / يصلحها","key","","","",""],
+["device","دِڤايس","جهاز","key","","","",""],
+["partnership","بارتنرشِب","شراكة","key","","","",""],
+["urgency","أَرجِنسي","إلحاح / ضرورة ملحة","key","","","",""],
+["drivers","درايفرز","برامج تشغيل الكمبيوتر","key","","","",""],
+["revolutionize","رِڤَلُوشَن آيز","يُحدث ثورة في","key","","","",""],
+["version","ڤِرجِن","إصدار / نسخة","key","","","",""],
+
+/* Reading & Listening */
+["advanced","أدفانست","متقدم / متطور","reading","","","",""],
+["innovations","إِنُڤَيْشَنز","ابتكارات","reading","","","",""],
+["ramps","رامبس","منحدرات / ممرات منحدرة","reading","","","",""],
+["agriculture","أَجرِكَلْتشر","زراعة","reading","","","",""],
+["issue","إِشيو","مشكلة / قضية","reading","","","",""],
+["renewable","رينيوَبُل","متجدد","reading","sustainable / reusable","مستدام / قابل لإعادة الاستخدام","exhaustible / nonrenewable","قابل للنفاد / غير متجدد"],
+["argue","آرجيو","يجادل","reading","","","",""],
+["labor","لَيْبَر","عمالة / عمل","reading","","","",""],
+["replace","ريبليس","يحل محل / يستبدل","reading","","","",""],
+["artificial intelligence","آرتِفِشَل إنتِلِجِنس","الذكاء الاصطناعي","reading","","","",""],
+["lever","ليفَر","رافعة / ذراع","reading","","","",""],
+["revolution","رِڤَلُوشَن","ثورة","reading","","","",""],
+["basic","بَيْسِك","أساسي","reading","simple / fundamental / primary","بسيط / أساسي","complex / advanced / sophisticated","معقد / متطور"],
+["loose","لوس","فضفاض / غير محكم","reading","","","",""],
+["robot","روبوت","روبوت / إنسان آلي","reading","","","",""],
+["blend","بلِند","يخلط / مزيج","reading","","","",""],
+["marvel","مارڤِل","أعجوبة / معجزة","reading","","","",""],
+["role","رول","دور","reading","","","",""],
+["computerized","كمبيوترآيزد","آلي / محوسب","reading","","","",""],
+["master","ماستر","أستاذ / خبير","reading","","","",""],
+["scan","سكان","يمسح ضوئيًا","reading","","","",""],
+["crafts","كرافتس","حِرف يدوية","reading","","","",""],
+["mix","مِكس","يخلط / مزيج","reading","","","",""],
+["secure","سِكيور","آمن / يحمي","reading","","","",""],
+["customer","كَستَمَر","زبون","reading","","","",""],
+["monumental","مونيومِنتَل","ضخم / هائل / تذكاري","reading","massive / historic / significant","ضخم / تاريخي / مهم","trivial / minor / insignificant","بسيط / قليل الأهمية"],
+["settings","سِتِنجز","إعدادات","reading","","","",""],
+["digital","دِجِتَل","رقمي","reading","electronic / computerized","إلكتروني / محوسب","analog / manual / physical","تناظري / يدوي / مادي"],
+["nation","نَيْشَن","أمة / دولة","reading","","","",""],
+["smart","سمارت","ذكي","reading","","","",""],
+["enhance","إِنْهانس","يعزّز / يحسّن","reading","improve / boost / strengthen","يحسّن / يقوّي","weaken / diminish / reduce","يضعف / يقلل"],
+["note","نوت","يلاحظ / ملاحظة","reading","","","",""],
+["smooth","سموذ","سلس / ناعم / يُسَلِّس","reading","","","",""],
+["era","إيرا","عصر","reading","","","",""],
+["presentation","برِزِنتَيْشَن","عرض تقديمي","reading","","","",""],
+["traditional","ترَدِشَنَل","تقليدي","reading","classic / conventional / customary","تقليدي / معتاد","modern / innovative / nontraditional","حديث / مبتكر / غير تقليدي"],
+["fascinating","فاسِنيتِنج","رائع / مدهش / جذاب","reading","captivating / enchanting","جذاب / ساحر","boring / dull / uninteresting","ممل / غير ممتع"],
+["preserve","برِزِرف","يحافظ على / يصون","reading","","","",""],
+["transportation","ترانسبورتيشن","نقل / مواصلات","reading","","","",""],
+["historian","هِستوريَن","مؤرخ","reading","","","",""],
+["private-sector","برايفت سِكتور","القطاع الخاص","reading","","","",""],
+["updated","أَبديتِد","مُحدَّث / متطور","reading","","","",""],
+["import","إِمبورت","يستورد","reading","","","",""],
+["productivity","برودَكتِڤِتي","إنتاجية","reading","","","",""],
+["urgently","أَرجِنتلي","بشكل عاجل","reading","","","",""],
+["industrial","إِندَستريَل","صناعي","reading","","","",""],
+["properly","برابَرلي","بشكل مناسب","reading","","","",""],
+["wonders","وَندَرز","عجائب","reading","","","",""],
+
+/* Additional synonym/antonym words */
+["artificial","آرتِفِشَل","اصطناعي","syn","fake / man-made / synthetic","مزيف / مصنوع","natural / genuine / authentic","طبيعي / حقيقي"],
+["basic","بَيْسِك","أساسي / بسيط","syn","simple / fundamental / primary","بسيط / أساسي","complex / advanced / sophisticated","معقد / متطور"],
+["digital","دِجِتَل","رقمي","syn","electronic / computerized","إلكتروني / محوسب","analog / manual / physical","تناظري / يدوي / مادي"],
+["enhance","إِنْهانس","يحسّن / يعزّز","syn","improve / boost / strengthen","يحسّن / يقوّي","weaken / diminish / reduce","يضعف / يقلل"],
+["fascinating","فاسِنيتِنج","مدهش / جذاب","syn","captivating / enchanting","جذاب / ساحر","boring / dull / uninteresting","ممل / غير ممتع"],
+["monumental","مونيومِنتَل","ضخم / هائل / مهم","syn","massive / historic / significant","ضخم / تاريخي / مهم","trivial / minor / insignificant","بسيط / قليل الأهمية"],
+["renewable","رينيوَبُل","متجدد","syn","sustainable / reusable","مستدام / قابل لإعادة الاستخدام","exhaustible / nonrenewable","قابل للنفاد / غير متجدد"],
+["sophisticated","سَفِستِكَيْتِد","متطور / راقٍ","syn","refined / advanced / cultured","متطور / راقٍ / مثقف","simple / naive / unsophisticated","بسيط / ساذج / غير متطور"],
+["traditional","ترَدِشَنَل","تقليدي","syn","classic / conventional / customary","تقليدي / معتاد","modern / innovative / nontraditional","حديث / مبتكر / غير تقليدي"]
+];
+
+function esc(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
+function speak(text){
+  if(!("speechSynthesis" in window)){alert("ميزة النطق غير مدعومة في هذا المتصفح.");return;}
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  const selected=document.getElementById("voiceSelect").value;
+  const voices=speechSynthesis.getVoices();
+  const v=voices.find(x=>x.name===selected);
+  if(v) u.voice=v;
+  u.lang=v?.lang || "en-US";
+  u.rate=parseFloat(document.getElementById("rate").value);
+  u.pitch=parseFloat(document.getElementById("pitch").value);
+  u.volume=parseFloat(document.getElementById("volume").value);
+  speechSynthesis.speak(u);
+}
+function toggleSettings(){
+  document.getElementById("settingsPanel").classList.toggle("open");
+}
+function loadVoices(){
+  const sel=document.getElementById("voiceSelect");
+  if(!sel) return;
+  const all=speechSynthesis.getVoices();
+  const voices=all.filter(v=>/^en(-|_)/i.test(v.lang));
+  const current=sel.value;
+  sel.innerHTML="";
+  const presets=[
+    ["__learner1","🇪🇬 متعلم مصري 1 — هادئ"],
+    ["__learner2","🇪🇬 متعلم مصري 2 — أبطأ"],
+  ];
+  presets.forEach(([value,label])=>{
+    const o=document.createElement("option");o.value=value;o.textContent=label;sel.appendChild(o);
+  });
+  voices.forEach(v=>{
+    const o=document.createElement("option");o.value=v.name;o.textContent=v.name+" — "+v.lang;sel.appendChild(o);
+  });
+  if(current) sel.value=current;
+}
+document.addEventListener("DOMContentLoaded",()=>{
+  loadVoices();
+  speechSynthesis.onvoiceschanged=loadVoices;
+  const rate=document.getElementById("rate"),pitch=document.getElementById("pitch"),volume=document.getElementById("volume");
+  rate.oninput=()=>document.getElementById("rateVal").textContent=rate.value+"×";
+  pitch.oninput=()=>document.getElementById("pitchVal").textContent=parseFloat(pitch.value).toFixed(2);
+  volume.oninput=()=>document.getElementById("volumeVal").textContent=Math.round(volume.value*100)+"%";
+  document.getElementById("voiceSelect").addEventListener("change",e=>{
+    if(e.target.value==="__learner1"){rate.value=".78";pitch.value="1.03";}
+    if(e.target.value==="__learner2"){rate.value=".68";pitch.value="1.08";}
+    rate.dispatchEvent(new Event("input"));pitch.dispatchEvent(new Event("input"));
+  });
+});
+
+let examSets=[],currentExam=null,selectedAnswers=[];function uniqueWords(){const seen=new Set(),out=[];for(const w of words){const k=w[0].toLowerCase();if(!seen.has(k)){seen.add(k);out.push(w)}}return out}function seededRand(seed){return()=>{seed=(seed*9301+49297)%233280;return seed/233280}}function shuffleWithRand(a,r){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}function makeQuestion(w,mode,r){const all=uniqueWords(),pool=shuffleWithRand(all.filter(x=>x[0]!==w[0]),r).slice(0,3);let opts,text;if(mode===0){text=`ما الكلمة الإنجليزية التي تعني: «${w[2]}»؟`;opts=[w[0],...pool.map(x=>x[0])]}else{text=`ما المعنى العام للكلمة: “${w[0]}”؟`;opts=[w[2],...pool.map(x=>x[2])]}const mixed=shuffleWithRand(opts.map((x,i)=>({x,i})),r);return{text,opts:mixed.map(z=>z.x),correct:mixed.findIndex(z=>z.i===0)}}function buildExamSets(){const all=uniqueWords();examSets=[];for(let e=0;e<20;e++){const r=seededRand(1700+e*7919),picked=shuffleWithRand(all,r).slice(0,10);examSets.push(picked.map((w,i)=>makeQuestion(w,i%2,r)))}}function renderExam(qs){selectedAnswers=Array(qs.length).fill(null);document.getElementById('examQuestions').innerHTML=qs.map((q,i)=>`<div class="question"><div class="qtext">${i+1}) ${esc(q.text)}</div><div class="options">${q.opts.map((o,j)=>`<button class="option" data-q="${i}" onclick="selectExamOption(${i},${j},this)">${esc(o)}</button>`).join('')}</div></div>`).join('');document.getElementById('examResult').innerHTML='';document.getElementById('examSubmit').style.display='block'}function selectExamOption(q,o,b){selectedAnswers[q]=o;document.querySelectorAll(`.option[data-q="${q}"]`).forEach(x=>x.classList.remove('selected'));b.classList.add('selected')}function newRandomExam(){if(!examSets.length)buildExamSets();const no=Math.floor(Math.random()*20);currentExam=shuffleWithRand(examSets[no],Math.random);document.getElementById('examMeta').textContent=`10 أسئلة اختيار من متعدد • الدرجة من 10`;renderExam(currentExam)}function submitExam(){if(!currentExam)return;let good=0,answered=0;currentExam.forEach((q,i)=>{if(selectedAnswers[i]!==null){answered++;if(selectedAnswers[i]===q.correct)good++}});currentExam.forEach((q,i)=>document.querySelectorAll(`.option[data-q="${i}"]`).forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add('correct');else if(j===selectedAnswers[i])b.classList.add('wrong')}));document.getElementById('examSubmit').style.display='none';document.getElementById('examResult').innerHTML=`النتيجة: <strong>${good} / 10</strong><br><span style="font-size:13px;color:#aaa39a">أجبت عن ${answered} من 10 أسئلة.</span>`}
+
+function render(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const sec=document.getElementById("section").value;
+ const seen=new Set(), filtered=[];
+ for(const w of words){
+   const [en,ar,meaning,type,syn,synAr,ant,antAr]=w;
+   const key=en.toLowerCase()+"|"+meaning;
+   if(seen.has(key)) continue;
+   seen.add(key);
+   const hay=(en+" "+ar+" "+meaning+" "+syn+" "+synAr+" "+ant+" "+antAr).toLowerCase();
+   if(sec!=="all" && type!==sec) continue;
+   if(q && !hay.includes(q)) continue;
+   filtered.push(w);
+ }
+ const regular=filtered.filter(w=>!(w[4]||w[6]));
+ const specials=filtered.filter(w=>(w[4]||w[6]));
+ document.getElementById("count").textContent=filtered.length;
+ const grid=document.getElementById("grid");
+ grid.innerHTML=regular.length?regular.map(w=>{
+   const [en,ar,meaning]=w;
+   return `<article class="card"><div class="top"><div><div class="word">${esc(en)}</div><div class="ar">النطق: ${esc(ar)}</div></div><button class="play" title="Listen" onclick='speak(${JSON.stringify(en)})'>🔊</button></div><div class="meaning"><div class="label">MEANING • المعنى العام</div><div>${esc(meaning)}</div></div></article>`;
+ }).join(""):'<div class="empty">لا توجد كلمات مطابقة للبحث.</div>';
+ const synGrid=document.getElementById("synGrid");
+ synGrid.innerHTML=specials.map(w=>{
+   const [en,ar,meaning,type,syn,synAr,ant,antAr]=w;
+   return `<article class="syn-card"><div class="syn-word">${esc(en)}</div><div class="ar">النطق: ${esc(ar)}</div><div class="syn-meaning">${esc(meaning)}</div>${syn?`<div class="pair"><div class="label">✦ SYNONYM • المرادف</div><div class="en">${esc(syn)}</div><div class="small">${esc(synAr)}</div></div>`:''}${ant?`<div class="pair"><div class="label">✦ ANTONYM • المضاد</div><div class="en">${esc(ant)}</div><div class="small">${esc(antAr)}</div></div>`:''}<button class="play" style="position:static;margin-top:16px" title="Listen" onclick='speak(${JSON.stringify(en)})'>🔊</button></article>`;
+ }).join("");
+ document.getElementById("synSection").style.display=specials.length?'block':'none';
+}
+function askBeforeExam(){document.getElementById('examConfirm').classList.add('show')}
+function closeExamConfirm(){document.getElementById('examConfirm').classList.remove('show')}
+function startExamAfterConfirm(){closeExamConfirm();const wrap=document.getElementById('examWrap');wrap.classList.remove('hidden-exam');newRandomExam();setTimeout(()=>wrap.scrollIntoView({behavior:'smooth',block:'start'}),80)}
+
+buildExamSets();render();
+
+</script>
+</body>
+</html>
