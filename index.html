@@ -96,6 +96,108 @@ header{background:rgba(5,6,8,.82);border-bottom:1px solid var(--border)}
 #grid{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));align-items:center}.card{aspect-ratio:1/1;border-radius:50%;padding:27px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:radial-gradient(circle at 35% 28%,rgba(255,248,220,.16),rgba(28,25,20,.94) 42%,rgba(6,7,8,.98) 100%);border:1px solid rgba(241,213,139,.35);box-shadow:0 0 8px rgba(241,213,139,.08),0 0 28px rgba(215,180,106,.08),inset 0 0 28px rgba(241,213,139,.035);animation:luxGlow 3.8s ease-in-out infinite}.card:nth-child(3n){animation-delay:.8s}.card:nth-child(3n+1){animation-delay:1.6s}.card:after{content:"";position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(255,255,255,.045);pointer-events:none}.card:hover{transform:translateY(-6px) scale(1.025);border-color:rgba(255,235,170,.8);box-shadow:0 0 15px rgba(241,213,139,.24),0 0 55px rgba(215,180,106,.18),inset 0 0 35px rgba(241,213,139,.07)}.card .top{justify-content:center;position:relative;z-index:1}.card .word{font-size:24px;text-align:center;overflow-wrap:anywhere;text-shadow:0 0 10px rgba(241,213,139,.14)}.card .ar{text-align:center}.card .play{position:absolute;top:19px;right:19px;border-radius:50%;width:38px;height:38px;z-index:2}.card .meaning{background:rgba(0,0,0,.22);border-radius:15px;text-align:center;max-height:92px;overflow:auto}.card .row{text-align:center}.card .en{text-align:center}@keyframes luxGlow{0%,100%{filter:brightness(.94);box-shadow:0 0 8px rgba(241,213,139,.07),0 0 24px rgba(215,180,106,.06),inset 0 0 24px rgba(241,213,139,.03)}50%{filter:brightness(1.13);box-shadow:0 0 15px rgba(241,213,139,.22),0 0 48px rgba(215,180,106,.15),inset 0 0 34px rgba(241,213,139,.065)}}
 .vocab-section-title{max-width:1200px;margin:5px auto 18px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}.vocab-section-title h2{margin:0;font-family:Georgia,serif;color:var(--gold2)}.exam-btn{border:1px solid rgba(241,213,139,.45);background:rgba(215,180,106,.1);color:#fff8e8;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}.exam-wrap{max-width:1200px;margin:0 auto 30px;padding:0 20px}.exam-panel{background:linear-gradient(145deg,rgba(25,22,17,.96),rgba(7,8,10,.98));border:1px solid rgba(241,213,139,.32);border-radius:28px;padding:22px;box-shadow:0 20px 70px rgba(0,0,0,.45),0 0 35px rgba(215,180,106,.08)}.exam-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}.exam-head h2{margin:0;font-family:Georgia,serif;color:var(--gold2)}.exam-meta{color:#aaa39a;font-size:13px}.question{padding:17px;border:1px solid rgba(215,180,106,.15);border-radius:18px;background:rgba(0,0,0,.16);margin:12px 0}.qtext{font-size:18px;font-weight:800;line-height:1.7;margin-bottom:12px}.options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.option{border:1px solid rgba(215,180,106,.2);background:rgba(215,180,106,.055);color:#f7f1e5;border-radius:13px;padding:12px;cursor:pointer;text-align:right;transition:.2s;font-size:14px}.option:hover{background:rgba(215,180,106,.13);border-color:rgba(241,213,139,.55)}.option.selected{border-color:#f1d58b;background:rgba(241,213,139,.16)}.option.correct{border-color:#68e3a4;background:rgba(72,190,125,.13)}.option.wrong{border-color:#ff8b9e;background:rgba(255,90,120,.12)}.exam-submit{width:100%;margin-top:15px;border:0;border-radius:15px;padding:14px;background:linear-gradient(135deg,#d7b46a,#8e6a2e);color:#080808;font-weight:900;cursor:pointer}.exam-result{margin-top:15px;padding:17px;border-radius:17px;background:rgba(215,180,106,.08);text-align:center;font-size:18px;font-weight:800}.exam-result strong{font-size:30px;color:var(--gold2)}@media(max-width:650px){#grid{grid-template-columns:repeat(2,minmax(145px,1fr));gap:11px}.card{padding:18px}.card .word{font-size:18px}.card .meaning{font-size:12px;padding:8px}.card .play{top:11px;right:11px;width:32px;height:32px}.options{grid-template-columns:1fr}.exam-panel{padding:15px}.vocab-section-title,.exam-wrap{padding-left:14px;padding-right:14px}.vocab-section-title{align-items:flex-start;gap:10px;flex-direction:column}}
 
+
+/* === LESSON 1 MYSTERIOUS GLOWING FRAME === */
+.lesson-one-frame{
+  position:relative;
+  max-width:1240px;
+  margin:34px auto 42px;
+  padding:28px 10px 18px;
+  border:1px solid rgba(241,213,139,.34);
+  border-radius:38px;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(120,85,255,.10),transparent 22%),
+    radial-gradient(circle at 88% 16%,rgba(0,204,255,.09),transparent 22%),
+    linear-gradient(145deg,rgba(20,18,16,.62),rgba(5,6,8,.48));
+  box-shadow:
+    0 0 18px rgba(120,85,255,.08),
+    0 0 55px rgba(0,190,255,.055),
+    0 24px 80px rgba(0,0,0,.42),
+    inset 0 0 45px rgba(241,213,139,.025);
+  overflow:hidden;
+}
+.lesson-one-frame:before,
+.lesson-one-frame:after{
+  content:"";
+  position:absolute;
+  width:210px;height:210px;
+  border-radius:50%;
+  pointer-events:none;
+  filter:blur(2px);
+  opacity:.42;
+}
+.lesson-one-frame:before{
+  top:-125px;right:-80px;
+  background:radial-gradient(circle,rgba(0,210,255,.18),transparent 67%);
+}
+.lesson-one-frame:after{
+  bottom:-135px;left:-80px;
+  background:radial-gradient(circle,rgba(145,75,255,.18),transparent 67%);
+}
+.lesson-one-title{
+  position:relative;
+  z-index:2;
+  margin:0 auto 24px;
+  width:fit-content;
+  max-width:calc(100% - 28px);
+  padding:14px 28px;
+  border:1px solid rgba(241,213,139,.42);
+  border-radius:999px;
+  background:
+    linear-gradient(110deg,rgba(92,54,180,.20),rgba(0,170,220,.10),rgba(215,180,106,.13));
+  box-shadow:
+    0 0 12px rgba(111,91,255,.14),
+    0 0 32px rgba(0,190,255,.07),
+    inset 0 0 22px rgba(255,255,255,.025);
+  text-align:center;
+}
+.lesson-one-title:before{
+  content:"✦";
+  margin-left:9px;
+  color:#9b8cff;
+  text-shadow:0 0 12px rgba(155,140,255,.8);
+}
+.lesson-one-title h2{
+  display:inline;
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#fff8e8;
+  font-size:clamp(21px,4vw,31px);
+  text-shadow:
+    0 0 10px rgba(241,213,139,.18),
+    0 0 22px rgba(112,90,255,.12);
+}
+.lesson-one-title:after{
+  content:"✦";
+  margin-right:9px;
+  color:#54dfff;
+  text-shadow:0 0 12px rgba(84,223,255,.75);
+}
+.lesson-one-frame #grid,
+.lesson-one-frame .syn-section,
+.lesson-one-frame .exam-launch,
+.lesson-one-frame .exam-wrap{
+  position:relative;
+  z-index:1;
+}
+.lesson-one-frame .vocab-section-title{
+  display:none;
+}
+.lesson-one-frame .syn-section{
+  margin-top:55px;
+}
+@media(max-width:650px){
+  .lesson-one-frame{
+    margin:24px 10px 34px;
+    padding:22px 4px 12px;
+    border-radius:28px;
+  }
+  .lesson-one-title{
+    padding:12px 18px;
+  }
+  .lesson-one-title h2{font-size:20px}
+}
+
 /* === UNIT 2 CIRCULAR GLOW + EXAM FLOW === */
 .card{border-radius:50%;aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px;animation:luxGlow 3.8s ease-in-out infinite;transition:transform .35s ease,filter .35s ease,box-shadow .35s ease}
 .card:nth-child(3n){animation-delay:-1.2s}.card:nth-child(4n){animation-delay:-2.1s}.card:nth-child(5n){animation-delay:-.6s}
@@ -120,6 +222,48 @@ header{background:rgba(5,6,8,.82);border-bottom:1px solid var(--border)}
 @keyframes channelShine{0%,70%{transform:translateX(-65%)}100%{transform:translateX(65%)}}
 @media(max-width:560px){.channel-promo{padding:0 14px}.channel-btn{padding:11px 13px}.channel-text b{font-size:13px}}
 
+
+/* === LESSON DIRECTORY + SECOND LESSON === */
+.home-lessons{
+  max-width:1100px;margin:45px auto 70px;padding:0 20px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;
+}
+.lesson-tile{
+  position:relative;min-height:310px;overflow:hidden;cursor:pointer;
+  border-radius:36px;padding:42px 28px;text-align:center;
+  border:1px solid rgba(241,213,139,.34);
+  background:
+    radial-gradient(circle at 25% 20%,rgba(108,83,255,.16),transparent 30%),
+    radial-gradient(circle at 78% 72%,rgba(0,205,255,.12),transparent 32%),
+    linear-gradient(145deg,rgba(29,25,19,.97),rgba(5,7,10,.99));
+  box-shadow:0 20px 70px rgba(0,0,0,.45),0 0 45px rgba(98,81,255,.07),inset 0 0 35px rgba(241,213,139,.025);
+  transition:.35s ease;
+}
+.lesson-tile:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(241,213,139,.7);box-shadow:0 25px 85px rgba(0,0,0,.55),0 0 55px rgba(70,180,255,.12),inset 0 0 45px rgba(241,213,139,.05)}
+.lesson-tile:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.035);border-radius:28px;pointer-events:none}
+.tile-icon{
+  position:relative;z-index:1;width:105px;height:105px;margin:0 auto 24px;border-radius:50%;
+  display:grid;place-items:center;font:900 28px Georgia,serif;color:#fff8e8;
+  border:1px solid rgba(241,213,139,.52);
+  background:radial-gradient(circle at 35% 25%,rgba(0,220,255,.24),rgba(102,70,220,.16) 40%,rgba(5,7,10,.98) 72%);
+  box-shadow:0 0 15px rgba(0,210,255,.13),0 0 38px rgba(120,70,255,.12),inset 0 0 25px rgba(241,213,139,.06);
+  animation:lessonIconGlow 3.5s ease-in-out infinite;
+}
+.tile-orbit{position:absolute;left:50%;top:80px;width:165px;height:165px;transform:translate(-50%,-50%);border:1px dashed rgba(80,205,255,.16);border-radius:50%;animation:orbit 10s linear infinite}
+.lesson-tile h2{position:relative;z-index:1;margin:0;color:#fff8e8;font:800 clamp(21px,3vw,29px) Georgia,serif}
+.lesson-tile p{position:relative;z-index:1;color:#aaa39a;line-height:1.8;margin:12px 0 20px}
+.lesson-tile span{position:relative;z-index:1;color:#f1d58b;font-weight:800}
+.lesson-page{display:none;max-width:1240px;margin:0 auto 45px}
+.lesson-page.active{display:block}
+.back-home{display:block;margin:8px auto 25px;border:1px solid rgba(241,213,139,.34);background:rgba(215,180,106,.08);color:#fff8e8;border-radius:999px;padding:11px 20px;cursor:pointer;font-weight:800}
+@keyframes lessonIconGlow{0%,100%{filter:brightness(.9);box-shadow:0 0 12px rgba(0,210,255,.10),0 0 30px rgba(120,70,255,.08),inset 0 0 20px rgba(241,213,139,.04)}50%{filter:brightness(1.2);box-shadow:0 0 20px rgba(0,210,255,.23),0 0 52px rgba(120,70,255,.18),inset 0 0 28px rgba(241,213,139,.08)}}
+@keyframes orbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@media(max-width:700px){
+  .home-lessons{grid-template-columns:1fr;padding:0 14px;gap:18px;margin-top:30px}
+  .lesson-tile{min-height:275px;padding:34px 20px}
+  .tile-orbit{top:72px;width:145px;height:145px}
+}
+
 </style>
 </head>
 <body>
@@ -129,7 +273,7 @@ header{background:rgba(5,6,8,.82);border-bottom:1px solid var(--border)}
 <h1>Unit 2 | 3 Sce</h1>
 <p>ده موقع <strong>البروف</strong> عملوا فيه أهم الكلمات اللي بتتكرر في امتحانات الثانوية العامة على <strong>Unit 2 | 3 Sce</strong>.</p>
 </section>
-<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
+<div id="lessonControls" style="display:none;">
 <div class="controls">
 <input id="search" class="search" placeholder="ابحث عن كلمة أو معناها بالعربي..." oninput="render()">
 <select id="section" class="select" onchange="render()">
@@ -163,16 +307,40 @@ header{background:rgba(5,6,8,.82);border-bottom:1px solid var(--border)}
     </div>
   </div>
 </div>
+</div>
+<section class="lesson-page" id="lesson2Page" aria-label="كلمات الدرس الثاني Unit 2">
+  <div class="lesson-one-title"><h2>كلمات الدرس الثاني Unit 2</h2></div>
+  <div class="stats"><div class="stat">📚 <b id="count2">0</b> كلمة</div><div class="stat">🔊 نطق إنجليزي</div><div class="stat">🇪🇬 نطق عربي</div></div>
+  <main id="grid2" class="grid"></main>
+  <section class="exam-launch"><div class="exam-launch-card"><div class="launch-icon">🎓</div><div><h2>جاهز للاختبار؟</h2><p>اختبر نفسك في 10 أسئلة اختيار من متعدد — الدرجة من 10.</p></div><button class="exam-btn launch-btn" onclick="askBeforeExam2()">عايز أمتحن</button></div></section>
+  <div class="exam-wrap hidden-exam" id="examWrap2"><div class="exam-panel"><div class="exam-head"><div><h2>🎓 امتحان الدرس الثاني</h2><div class="exam-meta">10 أسئلة اختيار من متعدد • الدرجة من 10</div></div><button class="exam-btn" onclick="newRandomExam2()">امتحان عشوائي جديد ↻</button></div><div id="examQuestions2"></div><button class="exam-submit" id="examSubmit2" onclick="submitExam2()">تسليم الامتحان وحساب الدرجة / 10</button><div id="examResult2"></div></div></div>
+  <button class="back-home" onclick="showHome()">← العودة للدروس</button></section>
+<div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
 <div class="stats"><div class="stat">📚 <b id="count">0</b> كلمة</div><div class="stat">🔊 نطق إنجليزي</div><div class="stat">🇪🇬 نطق عربي</div></div>
-<div class="vocab-section-title"><h2>📚 Unit 2 | 3 Sce</h2></div>
+<section class="home-lessons" id="homeLessons" aria-label="الدروس"><article class="lesson-tile lesson-tile-one" onclick="openLesson(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openLesson(1)"><div class="tile-orbit"></div><div class="tile-icon">01</div><h2>كلمات الدرس الأول Unit 2</h2><p>الكلمات + المرادفات والمضادات + الامتحان</p><span>اضغط للدخول ✦</span></article><article class="lesson-tile lesson-tile-two" onclick="openLesson(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openLesson(2)"><div class="tile-orbit"></div><div class="tile-icon">02</div><h2>كلمات الدرس الثاني Unit 2</h2><p>الكلمات + الامتحان</p><span>اضغط للدخول ✦</span></article></section><section class="lesson-page" id="lesson1Page" aria-label="كلمات الدرس الأول Unit 2">
+  <div class="lesson-one-title"><h2>كلمات الدرس الأول Unit 2</h2></div>
+
 <main id="grid" class="grid"></main>
 <section class="syn-section" id="synSection"><div class="syn-title"><div><span>✦ SYNONYMS & ANTONYMS</span><h2>المرادفات والمضادات</h2><p>الكلمات التي لها مرادف ومضاد — في قوالب كبيرة وواضحة للمراجعة.</p></div></div><div id="synGrid" class="syn-grid"></div></section>
 <div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
 <section class="exam-launch"><div class="exam-launch-card"><div class="launch-icon">🎓</div><div><h2>جاهز للاختبار؟</h2><p>اختبر نفسك في 10 أسئلة اختيار من متعدد — الدرجة من 10.</p></div><button class="exam-btn launch-btn" onclick="askBeforeExam()">عايز أمتحن</button></div></section>
 <div class="exam-wrap hidden-exam" id="examWrap"><div class="exam-panel" id="examPanel"><div class="exam-head"><div><h2>🎓 الامتحان العشوائي</h2><div class="exam-meta" id="examMeta">10 أسئلة اختيار من متعدد • الدرجة من 10</div></div><button class="exam-btn" onclick="newRandomExam()">امتحان عشوائي جديد ↻</button></div><div id="examQuestions"></div><button class="exam-submit" id="examSubmit" onclick="submitExam()">تسليم الامتحان وحساب الدرجة / 10</button><div id="examResult"></div></div></div>
+</section>
 <div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
 <div class="channel-promo"><a class="channel-btn" href="https://t.me/t000_12" target="_blank" rel="noopener noreferrer" aria-label="تلخيصات 3 ثانوي على تيليجرام"><span class="channel-icon">➤</span><span class="channel-text"><b>تلخيصات 3 ثانوي</b><small>قناة التلخيصات والمراجعة على Telegram</small></span></a></div>
 <footer>يونت 2 ثانوية عامة — EL Prof</footer>
+
+<div class="exam-confirm" id="examConfirm2">
+  <div class="confirm-card">
+    <div class="confirm-icon">📖</div>
+    <h2>هل ذاكرت الكلمات؟</h2>
+    <p>قبل ما تدخل امتحان الدرس الثاني، اتأكد إنك ذاكرت الكلمات كويس.</p>
+    <div class="confirm-actions">
+      <button class="confirm-yes" onclick="startExamAfterConfirm2()">نعم، ذاكرت</button>
+      <button class="confirm-no" onclick="closeExamConfirm2()">لسه بذاكر</button>
+    </div>
+  </div>
+</div>
 <div class="exam-confirm" id="examConfirm"><div class="confirm-card"><div class="confirm-icon">📖</div><h2>هل ذاكرت الكلمات؟</h2><p>قبل ما تدخل الامتحان، اتأكد إنك ذاكرت الكلمات كويس.</p><div class="confirm-actions"><button class="confirm-yes" onclick="startExamAfterConfirm()">نعم، ذاكرت</button><button class="confirm-no" onclick="closeExamConfirm()">لسه بذاكر</button></div></div></div>
 
 <script>
@@ -258,6 +426,93 @@ const words = [
 ["sophisticated","سَفِستِكَيْتِد","متطور / راقٍ","syn","refined / advanced / cultured","متطور / راقٍ / مثقف","simple / naive / unsophisticated","بسيط / ساذج / غير متطور"],
 ["traditional","ترَدِشَنَل","تقليدي","syn","classic / conventional / customary","تقليدي / معتاد","modern / innovative / nontraditional","حديث / مبتكر / غير تقليدي"]
 ];
+
+
+const lesson2Words = [
+["accurately","أكيورتلي","بدقة"],["alarm clock","ألارم كلوك","منبّه"],["assemble","أَسِمبُل","يجمع / يحشد / يُجمّع"],
+["balance","بالَنس","توازن / يوازن"],["boil","بويل","يغلي"],["comfort","كَمفُرت","راحة"],["compassion","كَمباشَن","شفقة / تعاطف"],
+["connected","كَنِكتِد","متصل"],["controls","كنترولز","ضوابط / عناصر تحكم"],["creativity","كريييتيفِتي","إبداع"],["daily","ديلي","يوميًا / يومي"],
+["destination","ديستِنَيْشَن","وجهة سفر"],["detect","ديتِكت","يكتشف / يرصد"],["diagnose","دايَجنوز","يشخّص"],["distraction","دِستراكشَن","تشتيت انتباه"],
+["document","دوكيومِنت","مستند / وثيقة"],["double","دَبُل","يضاعف"],["drawback","دروباك","عيب / سلبية"],["entertain","إنتَرتين","يُسلّي"],["fail","فيل","يفشل"],
+["heart","هارت","قلب"],["image","إِمِج","صورة"],["imagine","إِماجِن","يتخيل"],["influence","إنفلوِنس","تأثير / يؤثر على"],
+["instant","إنستَنت","فوري / عاجل"],["interactive","إنتَراكتِف","تفاعلي"],["item","آيتَم","عنصر / سلعة"],["kettle","كِتِل","غلاية"],
+["limit","لِمِت","حد"],["maximize","ماكسِمايز","يعظّم / يزيد للحد الأقصى"],["microwave","مايكروويف","فرن الميكروويف"],
+["minimize","مِينِمايز","يقلل / يقلل للحد الأدنى"],["monitor","مونِتَر","مراقب / يراقب"],["pack","باك","يعبئ / يحزم أمتعته"],
+["personal","بيرسَنَل","شخصي"],["photocopier","فوتوكوبيَر","آلة تصوير"],["power","باور","يزود بالطاقة / قوة / طاقة"],
+["power cut","باور كَت","انقطاع كهرباء"],["product","برودَكت","منتج"],["production","برودَكشَن","إنتاج"],["purpose","بيربَس","غرض / هدف"],
+["quality","كوالِتي","جودة"],["rate","ريت","معدل / وتيرة"],["recent","ريسَنت","حديث / مؤخر"],["routine","روتين","روتين / نظام / نمط"],
+["rule","رول","قاعدة / يحكم"],["scanner","سكانَر","ماسح ضوئي"],["section","سِكشَن","قسم / جزء"],["serve","سِرف","يخدم"],
+["shape","شيب","يشكل"],["solar energy","سولَر إنَرجي","طاقة شمسية"],["speed","سبيد","سرعة"],["spellcheck","سْبِل تشِك","التدقيق الإملائي / يتحقق من الأخطاء الإملائية"],
+["step","ستيب","خطوة"],["struggle","سترَجُل","كفاح / يكافح"],["system","سِستَم","نظام"],["treatment","تريتْمِنت","علاج"],
+["viewpoint","فيو بوينت","وجهة نظر"],["vacuum cleaner","فاكْيوم كلينَر","مكنسة كهربائية"],["warning","وورنينج","تحذير"],
+["washing machine","واشينج ماشين","غسالة"],["workplace","وِرك بليس","مكان العمل"]
+];
+
+function renderLesson2(){
+  const grid=document.getElementById("grid2");
+  if(!grid)return;
+  document.getElementById("count2").textContent=lesson2Words.length;
+  grid.innerHTML=lesson2Words.map(w=>`<article class="card"><div class="top"><div><div class="word">${esc(w[0])}</div><div class="ar">النطق: ${esc(w[1])}</div></div><button class="play" title="Listen" onclick='speak(${JSON.stringify(w[0])})'>🔊</button></div><div class="meaning"><div class="label">MEANING • المعنى العام</div><div>${esc(w[2])}</div></div></article>`).join("");
+}
+
+let currentExam2=null,selectedAnswers2=[];
+function uniqueWords2(){return lesson2Words}
+function seededRand2(seed){return()=>{seed=(seed*9301+49297)%233280;return seed/233280}}
+function shuffleWithRand2(a,r){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function makeQuestion2(w,mode,r){
+  const pool=shuffleWithRand2(lesson2Words.filter(x=>x[0]!==w[0]),r).slice(0,3);
+  let opts,text;
+  if(mode===0){text=`ما الكلمة الإنجليزية التي تعني: «${w[2]}»؟`;opts=[w[0],...pool.map(x=>x[0])]}
+  else{text=`ما المعنى العام للكلمة: “${w[0]}”؟`;opts=[w[2],...pool.map(x=>x[2])]}
+  const mixed=shuffleWithRand2(opts.map((x,i)=>({x,i})),r);
+  return{text,opts:mixed.map(z=>z.x),correct:mixed.findIndex(z=>z.i===0)}
+}
+function newRandomExam2(){
+  const r=seededRand2(Date.now()%233280);
+  const picked=shuffleWithRand2(lesson2Words,r).slice(0,10);
+  currentExam2=picked.map((w,i)=>makeQuestion2(w,i%2,r));
+  renderExam2(currentExam2);
+}
+function renderExam2(qs){
+  selectedAnswers2=Array(qs.length).fill(null);
+  document.getElementById("examQuestions2").innerHTML=qs.map((q,i)=>`<div class="question"><div class="qtext">${i+1}) ${esc(q.text)}</div><div class="options">${q.opts.map((o,j)=>`<button class="option" data-q2="${i}" onclick="selectExamOption2(${i},${j},this)">${esc(o)}</button>`).join("")}</div></div>`).join("");
+  document.getElementById("examResult2").innerHTML="";
+  document.getElementById("examSubmit2").style.display="block";
+}
+function selectExamOption2(q,o,b){
+  selectedAnswers2[q]=o;
+  document.querySelectorAll(`.option[data-q2="${q}"]`).forEach(x=>x.classList.remove("selected"));
+  b.classList.add("selected");
+}
+function submitExam2(){
+  if(!currentExam2)return;
+  let good=0,answered=0;
+  currentExam2.forEach((q,i)=>{if(selectedAnswers2[i]!==null){answered++;if(selectedAnswers2[i]===q.correct)good++}});
+  currentExam2.forEach((q,i)=>document.querySelectorAll(`.option[data-q2="${i}"]`).forEach((b,j)=>{
+    b.disabled=true;if(j===q.correct)b.classList.add("correct");else if(j===selectedAnswers2[i])b.classList.add("wrong");
+  }));
+  document.getElementById("examSubmit2").style.display="none";
+  document.getElementById("examResult2").innerHTML=`النتيجة: <strong>${good} / 10</strong><br><span style="font-size:13px;color:#aaa39a">أجبت عن ${answered} من 10 أسئلة.</span>`;
+}
+function askBeforeExam2(){document.getElementById("examConfirm2").classList.add("show")}
+function closeExamConfirm2(){document.getElementById("examConfirm2").classList.remove("show")}
+function startExamAfterConfirm2(){closeExamConfirm2();const wrap=document.getElementById("examWrap2");wrap.classList.remove("hidden-exam");newRandomExam2();setTimeout(()=>wrap.scrollIntoView({behavior:"smooth",block:"start"}),80)}
+function openLesson(n){
+  document.getElementById("homeLessons").style.display="none";
+  document.getElementById("lessonControls").style.display="block";
+  document.getElementById("lesson1Page").classList.remove("active");
+  document.getElementById("lesson2Page").classList.remove("active");
+  document.getElementById(n===1?"lesson1Page":"lesson2Page").classList.add("active");
+  if(n===2)renderLesson2();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function showHome(){
+  document.getElementById("lesson1Page").classList.remove("active");
+  document.getElementById("lesson2Page").classList.remove("active");
+  document.getElementById("lessonControls").style.display="none";
+  document.getElementById("homeLessons").style.display="grid";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
 
 function esc(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));}
 function speak(text){
@@ -345,7 +600,7 @@ function askBeforeExam(){document.getElementById('examConfirm').classList.add('s
 function closeExamConfirm(){document.getElementById('examConfirm').classList.remove('show')}
 function startExamAfterConfirm(){closeExamConfirm();const wrap=document.getElementById('examWrap');wrap.classList.remove('hidden-exam');newRandomExam();setTimeout(()=>wrap.scrollIntoView({behavior:'smooth',block:'start'}),80)}
 
-buildExamSets();render();
+buildExamSets();render();renderLesson2();showHome();
 
 </script>
 </body>
